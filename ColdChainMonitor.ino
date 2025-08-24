@@ -2,7 +2,7 @@
 #include <LiquidCrystal_I2C.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
-#include "secrets.h"   // <-- create your own file from src/secrets_example.h (not committed to GitHub)
+#include "secrets.h"   // <-- create your own file from src/secrets_example.h
 
 // LCD 16x2
 LiquidCrystal_I2C lcd(0x27, 16, 2);
@@ -48,7 +48,6 @@ void sendTelegram(String message) {
   http.end();
 }
 
-///////////////////////////
 // Read NTC temperature (fast approximate)
 // NOTE: For best accuracy, replace with proper Steinhart–Hart using your NTC's Beta.
 // Assumes 10k NTC with 10k to GND divider, 3.3V ref, ADC 12-bit (0..4095).
@@ -74,7 +73,7 @@ float readTemperature() {
   return T;
 }
 
-///////////////////////////
+
 void setup() {
   Serial.begin(115200);
 
@@ -113,7 +112,7 @@ void setup() {
   lcd.clear();
 }
 
-///////////////////////////
+
 void loop() {
   // try to reconnect if needed
   if (WiFi.status() != WL_CONNECTED) {
