@@ -1,0 +1,8 @@
+# Ignore your private secrets
+secrets.h
+
+# Arduino / OS clutter
+.DS_Store
+*.tmp
+*.bak
+*.swp
